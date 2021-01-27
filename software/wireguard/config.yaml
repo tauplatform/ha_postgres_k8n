@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wireguard
+data:
+  wg0.conf: |
+    [Interface]
+    Address = 10.233.0.1/24
+    PrivateKey = MEbfsPaKtQVADL7GzvoXzpT/imqfWDKUskV1uCIgXn0=
+    ListenPort = 51820
+
+    # Client 1
+    [Peer]
+    AllowedIPs = 10.233.0.2/32
+    PublicKey = LqqBLng0Z6LWk8bI2HoVjRe/J1/O5w20CwRGDMM2sww=
+
+    # Client 2
+    [Peer]
+    AllowedIPs = 10.233.0.3/32
+    PublicKey = KgjIywl/e1tFVuTIdUT5xzlfGeidpSsaQx2xPI1lRHY=
+
+    # Client 3
+    [Peer]
+    AllowedIPs = 10.233.0.4/32
+    PublicKey = NsntkxSfTN/mwwO5KE0a7va1NFrYAC/3H8oe2yGDRGE=
